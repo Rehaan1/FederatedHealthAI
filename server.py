@@ -2,6 +2,7 @@ from collections import OrderedDict
 from omegaconf import DictConfig
 from model import Net, test
 import torch
+import numpy as np
 
 def get_on_fit_config_fn(config: DictConfig):
     
@@ -25,8 +26,8 @@ def get_evaluate_fn(num_classes: int, testloader):
 
         params_dict = zip(model.state_dict().keys(), parameters)
         # Note: torch.Tensor was changed to torch.tensor
-        state_dict = OrderedDict({k: torch.Tensor(v) for k, v in params_dict})
-        model.load_state_dict(state_dict, strict=False)
+        state_dict = OrderedDict({k: torch.from_numpy(np.copy(v)) for k, v in params_dict})
+        model.load_state_dict(state_dict, strict=True)
 
         loss, accuracy = test(model, testloader, device)
 

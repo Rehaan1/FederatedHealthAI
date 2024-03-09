@@ -1,6 +1,7 @@
 from collections import OrderedDict
 from typing import Dict, Tuple
 from flwr.common import NDArrays, Scalar
+import numpy as np
 
 import torch
 import flwr as fl
@@ -28,9 +29,9 @@ class FlowerClient(fl.client.NumPyClient):
         """Receive parameters and apply them to the local model."""
         params_dict = zip(self.model.state_dict().keys(), parameters)
 
-        state_dict = OrderedDict({k: torch.Tensor(v) for k, v in params_dict})
+        state_dict = OrderedDict({k: torch.from_numpy(np.copy(v)) for k, v in params_dict})
 
-        self.model.load_state_dict(state_dict, strict=False)
+        self.model.load_state_dict(state_dict, strict=True)
 
     def get_parameters(self, config: Dict[str, Scalar]):
         """Extract model parameters and return them as a list of numpy arrays."""
