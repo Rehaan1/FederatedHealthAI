@@ -1,0 +1,20 @@
+[2024-03-06 20:24:11,426][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=10, round_timeout=None)
+[2024-03-06 20:24:15,558][flwr][INFO] - Flower VCE: Ray initialized with resources: {'CPU': 24.0, 'memory': 30160099739.0, 'object_store_memory': 15080049868.0, 'node:127.0.0.1': 1.0, 'node:__internal_head__': 1.0, 'GPU': 1.0}
+[2024-03-06 20:24:15,558][flwr][INFO] - Optimize your simulation with Flower VCE: https://flower.dev/docs/framework/how-to-run-simulations.html
+[2024-03-06 20:24:15,558][flwr][INFO] - No `client_resources` specified. Using minimal resources for clients.
+[2024-03-06 20:24:15,558][flwr][INFO] - Flower VCE: Resources for each Virtual Client: {'num_cpus': 1, 'num_gpus': 0.0}
+[2024-03-06 20:24:15,571][flwr][INFO] - Flower VCE: Creating VirtualClientEngineActorPool with 24 actors
+[2024-03-06 20:24:15,572][flwr][INFO] - Initializing global parameters
+[2024-03-06 20:24:15,572][flwr][INFO] - Requesting initial parameters from one random client
+[2024-03-06 20:24:20,101][flwr][INFO] - Received initial parameters from one random client
+[2024-03-06 20:24:20,101][flwr][INFO] - Evaluating initial parameters
+[2024-03-06 20:24:25,081][flwr][INFO] - initial parameters (loss, other metrics): 14.100419223308563, {'accuracy': 0.5053763440860215}
+[2024-03-06 20:24:25,081][flwr][INFO] - FL starting
+[2024-03-06 20:24:25,082][flwr][DEBUG] - fit_round 1: strategy sampled 5 clients (out of 25)
+[2024-03-06 20:24:36,881][flwr][DEBUG] - fit_round 1 received 5 results and 0 failures
+[2024-03-06 20:24:37,073][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2024-03-06 20:24:41,831][flwr][INFO] - fit progress: (1, 8.253032892942429, {'accuracy': 0.7858812529219261}, 16.749303400001736)
+[2024-03-06 20:24:41,831][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 25)
+[2024-03-06 20:24:54,917][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2024-03-06 20:24:54,917][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2024-03-06 20:24:54,918][flwr][DEBUG] - fit_round 2: strategy sampled 5 clients (out of 25)
